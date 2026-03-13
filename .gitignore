@@ -1,0 +1,15 @@
+# 参考画像（著作権のある外部サイトスクリーンショット）
+references/
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+
+# エディタ
+*.swp
+*.swo
+*~
+
+# Node.js（将来使用する場合）
+node_modules/
+.env

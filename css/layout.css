@@ -1,0 +1,104 @@
+/* ──────────────────────────────────────────────────────────
+   layout.css — ページレイアウト（ヘッダー・フッター・セクション）
+   ────────────────────────────────────────────────────────── */
+
+/* ── Site Header ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0d0d0d;
+  color: #fff;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-header__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.site-header__nav {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.site-header__nav a {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.site-header__nav a:hover {
+  color: #fff;
+}
+
+/* ── Site Main ── */
+.site-main {
+  /* スライダーセクションが縦に並ぶ */
+}
+
+/* ── Demo Section ── */
+.demo-section {
+  position: relative;
+}
+
+.demo-section__label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: #f0f0f0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.demo-section__number {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #bbb;
+  letter-spacing: 0.12em;
+}
+
+.demo-section__title {
+  font-size: 0.8125rem;
+  color: #888;
+  letter-spacing: 0.04em;
+}
+
+/* ── Site Footer ── */
+.site-footer {
+  background: #0d0d0d;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: var(--space-lg);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .site-header {
+    padding: var(--space-md);
+  }
+
+  .site-header__nav {
+    display: none;
+  }
+
+  .demo-section__label {
+    padding: var(--space-sm) var(--space-md);
+  }
+}

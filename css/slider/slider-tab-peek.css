@@ -1,0 +1,350 @@
+/* ──────────────────────────────────────────────────────────
+   slider-tab-peek.css
+   No.01 三菱風 — タブ連動 + Peek型横スライダー
+   ────────────────────────────────────────────────────────── */
+
+/* ── Base + Scoped CSS Variables ── */
+.slider-mitsubishi {
+  --sm-bg:          #242424;
+  --sm-bg-surface:  #2e2e2e;
+  --sm-bg-card:     #383838;
+  --sm-accent:      #cc0000;
+  --sm-accent-dim:  rgba(204, 0, 0, 0.25);
+  --sm-text:        #ffffff;
+  --sm-text-muted:  rgba(255, 255, 255, 0.5);
+  --sm-border:      rgba(255, 255, 255, 0.12);
+  --sm-peek:        510px;   /* JS が動的に上書き */
+  --sm-gap:         240px;   /* JS が動的に上書き */
+  --sm-ease:        cubic-bezier(0.4, 0, 0.2, 1);
+
+  background: var(--sm-bg);
+  color: var(--sm-text);
+  padding: 100px 0 120px;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ── Header ── */
+.slider-mitsubishi__header {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 var(--space-lg, 32px);
+  text-align: center;
+}
+
+.slider-mitsubishi__heading {
+  margin-bottom: 28px;
+}
+
+.slider-mitsubishi__title-en {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--sm-text);
+}
+
+.slider-mitsubishi__title-ja {
+  font-size: 0.8125rem;
+  color: var(--sm-text-muted);
+  letter-spacing: 0.15em;
+  margin-top: 8px;
+}
+
+/* ── Tabs ── */
+.slider-mitsubishi__tabs {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.slider-mitsubishi__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px 12px;
+  background: transparent;
+  border: 1px solid var(--sm-border);
+  color: var(--sm-text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  min-width: 80px;
+  line-height: 1;
+}
+
+.slider-mitsubishi__tab:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.slider-mitsubishi__tab.is-active {
+  border-color: var(--sm-accent);
+  color: var(--sm-text);
+  background: var(--sm-accent-dim);
+}
+
+.slider-mitsubishi__tab:focus-visible {
+  outline: 2px solid var(--sm-accent);
+  outline-offset: 2px;
+}
+
+.slider-mitsubishi__tab-icon {
+  width: 44px;
+  height: 26px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Stage (overflow クリップ) ── */
+.slider-mitsubishi__stage {
+  position: relative;
+  overflow: hidden;
+  /* scale(1) のアクティブアイテムが上下でクリップされないよう余白確保 */
+  padding: 16px 0;
+  margin: -16px 0;
+}
+
+/* ── Track ── */
+.slider-mitsubishi__track {
+  display: flex;
+  gap: var(--sm-gap);
+  transition: transform 0.65s var(--sm-ease);
+  will-change: transform;
+}
+
+/* ── Item ── */
+.slider-mitsubishi__item {
+  flex-shrink: 0;
+  /* width は JS で設定。JS未実行時のフォールバック */
+  width: calc(50vw - 20px);
+  min-width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  /* opacity / transform は JS が位置ベースで動的に設定 */
+  transform-origin: center center;
+  cursor: pointer;
+}
+
+.slider-mitsubishi__item.is-active {
+  cursor: default;
+}
+
+/* ── Image Wrap ── */
+.slider-mitsubishi__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.slider-mitsubishi__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Gray Gradient Placeholder ── */
+.slider-mitsubishi__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(160deg, #6e6e6e 0%, #888888 40%, #707070 100%);
+}
+
+.slider-mitsubishi__placeholder-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+/* ── Diamond Navigation Buttons ── */
+.slider-mitsubishi__btn {
+  position: absolute;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  background: transparent;
+  border: 1.5px solid var(--sm-accent);
+  transform: translateY(-50%) rotate(45deg);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.slider-mitsubishi__btn:hover {
+  background: var(--sm-accent);
+}
+
+.slider-mitsubishi__btn--prev {
+  left: 20px;
+}
+
+.slider-mitsubishi__btn--next {
+  right: 20px;
+}
+
+.slider-mitsubishi__btn-icon {
+  transform: rotate(-45deg);
+  width: 22px;
+  height: 22px;
+  color: var(--sm-accent);
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+  pointer-events: none;
+}
+
+.slider-mitsubishi__btn:hover .slider-mitsubishi__btn-icon {
+  color: #fff;
+}
+
+.slider-mitsubishi__btn:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 6px;
+}
+
+/* ── Footer: Caption + CTA ── */
+.slider-mitsubishi__footer {
+  max-width: 1200px;
+  margin: 72px auto 0;
+  padding: 0 var(--space-lg, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+/* ── Caption ── */
+.slider-mitsubishi__caption {
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--sm-text);
+  min-height: 1.15em;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.slider-mitsubishi__caption.is-animating {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* ── CTA Button ── */
+.slider-mitsubishi__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 32px;
+  border: 1px solid var(--sm-text);
+  color: var(--sm-text);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.slider-mitsubishi__cta:hover {
+  background: var(--sm-text);
+  color: var(--sm-bg);
+}
+
+.slider-mitsubishi__cta:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.slider-mitsubishi__cta-arrow {
+  font-size: 1.1em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.slider-mitsubishi__cta:hover .slider-mitsubishi__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Responsive: SP (〜767px) ── */
+@media (max-width: 767px) {
+  .slider-mitsubishi {
+    --sm-peek: 48px;
+    --sm-gap: 12px;
+    padding: 60px 0 72px;
+  }
+
+  .slider-mitsubishi__header {
+    padding: 0 var(--space-md);
+    margin-bottom: 24px;
+  }
+
+  .slider-mitsubishi__heading {
+    margin-bottom: 20px;
+  }
+
+  .slider-mitsubishi__tabs {
+    gap: 4px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .slider-mitsubishi__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slider-mitsubishi__tab {
+    min-width: 64px;
+    padding: 8px 10px 10px;
+    font-size: 0.625rem;
+    flex-shrink: 0;
+  }
+
+  .slider-mitsubishi__tab-icon {
+    width: 36px;
+    height: 22px;
+  }
+
+  .slider-mitsubishi__btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .slider-mitsubishi__btn--prev {
+    left: 8px;
+  }
+
+  .slider-mitsubishi__btn--next {
+    right: 8px;
+  }
+
+  .slider-mitsubishi__btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .slider-mitsubishi__footer {
+    padding: 0 var(--space-md);
+    margin-top: 20px;
+    gap: 18px;
+  }
+
+  .slider-mitsubishi__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
