@@ -104,15 +104,26 @@ class SliderTabPeek {
 
   calcDimensions() {
     const stageW = this.stage.offsetWidth;
-    this.gap     = this.isSP ? this.options.gapSP : this.options.gapPC;
+    const w      = window.innerWidth;
 
-    /* 中央スライドがステージの約半幅 → 隣接スライドが約半分見切れるレイアウト */
-    this.itemW = Math.round((stageW - this.gap * 2) / 2);
+    if (w < 600) {
+      /* SP: 中央1カラム（ステージ幅の90%） */
+      this.gap   = 16;
+      this.itemW = Math.round(stageW * 0.9);
+    } else if (w < 1025) {
+      /* Tablet: 中央大きく、左右が少し見切れるレイアウト（75%） */
+      this.gap   = 32;
+      this.itemW = Math.round(stageW * 0.75);
+    } else {
+      /* PC: peek型レイアウト */
+      this.gap   = this.options.gapPC;
+      this.itemW = Math.round((stageW - this.gap * 2) / 2 * 0.8);
+    }
 
     /* peek: 中央スライドの左端が置かれる位置（対称配置） */
     this.peek = Math.round((stageW - this.itemW) / 2);
 
-    /* CSS変数を更新（header / footer のパディングを合わせる） */
+    /* CSS変数を更新 */
     this.el.style.setProperty('--sm-peek', `${this.peek}px`);
     this.el.style.setProperty('--sm-gap',  `${this.gap}px`);
 
@@ -254,7 +265,8 @@ class SliderTabPeek {
     if (!this.captionEl) return;
     this.captionEl.classList.add('is-animating');
     setTimeout(() => {
-      this.captionEl.textContent = this.captions[this.current];
+      const num = String(this.current + 1).padStart(2, '0');
+      this.captionEl.textContent = `${num} — ${this.captions[this.current]}`;
       this.captionEl.classList.remove('is-animating');
     }, 220);
   }

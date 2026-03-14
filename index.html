@@ -40,7 +40,7 @@
       <div
         class="slider-mitsubishi"
         role="region"
-        aria-label="カーラインアップ スライダー"
+        aria-label="製品ラインナップ スライダー"
         tabindex="0"
       >
         <!-- スクリーンリーダー用ライブリージョン -->
@@ -53,16 +53,16 @@
         <!-- ── ヘッダー：見出し + タブナビ ── -->
         <div class="slider-mitsubishi__header">
           <div class="slider-mitsubishi__heading">
-            <h2 class="slider-mitsubishi__title-en">Line Up</h2>
-            <p class="slider-mitsubishi__title-ja">カーラインアップ</p>
+            <h2 class="slider-mitsubishi__title-en">Products</h2>
+            <p class="slider-mitsubishi__title-ja">製品ラインナップ</p>
           </div>
 
           <nav
             class="slider-mitsubishi__tabs"
             role="tablist"
-            aria-label="車種カテゴリ"
+            aria-label="製品カテゴリ"
           >
-            <!-- Tab 0: EV/PHEV -->
+            <!-- Tab 0: SERIES 01 -->
             <button
               class="slider-mitsubishi__tab is-active"
               role="tab"
@@ -71,22 +71,15 @@
               id="sm-tab-0"
               data-index="0"
             >
-              <!-- EV/PHEV クロスオーバーSUV シルエット -->
-              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 52 30" aria-hidden="true">
-                <path d="M3,27 L3,21 Q3,17 6,15 L13,12 Q18,10 24,9 Q30,9 37,11 L44,14 Q48,16 49,19 L49,27 Z"/>
-                <circle cx="13" cy="27" r="6" fill="#242424"/>
-                <circle cx="39" cy="27" r="6" fill="#242424"/>
-                <circle cx="13" cy="27" r="4"/>
-                <circle cx="39" cy="27" r="4"/>
-                <circle cx="13" cy="27" r="1.5" fill="#242424"/>
-                <circle cx="39" cy="27" r="1.5" fill="#242424"/>
-                <!-- Eボルトマーク -->
-                <path d="M25,4 L22,9 L25,8 L22,14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="8" width="18" height="13" rx="1"/>
+                <polyline points="3,8 12,3 21,8"/>
+                <line x1="8" y1="14" x2="16" y2="14"/>
               </svg>
-              <span>EV/PHEV</span>
+              <span class="slider-mitsubishi__tab-label">SERIES 01</span>
             </button>
 
-            <!-- Tab 1: SUV -->
+            <!-- Tab 1: SERIES 02 -->
             <button
               class="slider-mitsubishi__tab"
               role="tab"
@@ -96,22 +89,13 @@
               data-index="1"
               tabindex="-1"
             >
-              <!-- SUV（背高・ボックス型） -->
-              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 52 30" aria-hidden="true">
-                <path d="M3,27 L3,19 Q3,14 7,12 L14,10 Q19,8 26,8 Q32,8 39,10 L45,13 Q49,15 49,19 L49,27 Z"/>
-                <circle cx="13" cy="27" r="6" fill="#242424"/>
-                <circle cx="39" cy="27" r="6" fill="#242424"/>
-                <circle cx="13" cy="27" r="4"/>
-                <circle cx="39" cy="27" r="4"/>
-                <circle cx="13" cy="27" r="1.5" fill="#242424"/>
-                <circle cx="39" cy="27" r="1.5" fill="#242424"/>
-                <!-- ルーフライン（直線的・高め） -->
-                <line x1="14" y1="10" x2="39" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
               </svg>
-              <span>SUV</span>
+              <span class="slider-mitsubishi__tab-label">SERIES 02</span>
             </button>
 
-            <!-- Tab 2: ミニバン -->
+            <!-- Tab 2: SERIES 03 -->
             <button
               class="slider-mitsubishi__tab"
               role="tab"
@@ -121,23 +105,14 @@
               data-index="2"
               tabindex="-1"
             >
-              <!-- ミニバン（フラット屋根・背高・全長長め） -->
-              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 52 30" aria-hidden="true">
-                <path d="M3,27 L3,17 Q3,13 6,12 L11,11 Q14,9 26,9 Q36,9 42,11 L47,14 Q49,16 49,19 L49,27 Z"/>
-                <rect x="11" y="9" width="31" height="2" rx="1" fill="#242424" opacity="0.4"/>
-                <circle cx="12" cy="27" r="6" fill="#242424"/>
-                <circle cx="40" cy="27" r="6" fill="#242424"/>
-                <circle cx="12" cy="27" r="4"/>
-                <circle cx="40" cy="27" r="4"/>
-                <circle cx="12" cy="27" r="1.5" fill="#242424"/>
-                <circle cx="40" cy="27" r="1.5" fill="#242424"/>
-                <!-- スライドドア線 -->
-                <line x1="30" y1="13" x2="30" y2="21" stroke="#242424" stroke-width="1" opacity="0.5"/>
+              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2h10l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+                <circle cx="7" cy="7" r="1" fill="currentColor" stroke="none"/>
               </svg>
-              <span>ミニバン</span>
+              <span class="slider-mitsubishi__tab-label">SERIES 03</span>
             </button>
 
-            <!-- Tab 3: コンパクト -->
+            <!-- Tab 3: SERIES 04 -->
             <button
               class="slider-mitsubishi__tab"
               role="tab"
@@ -147,22 +122,16 @@
               data-index="3"
               tabindex="-1"
             >
-              <!-- コンパクト（スロープドルーフ・ハッチバック） -->
-              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 52 30" aria-hidden="true">
-                <path d="M3,27 L3,21 Q3,17 6,15 L12,12 Q16,10 22,9 Q28,9 34,10 L41,13 Q47,15 49,19 L49,27 Z"/>
-                <!-- ハッチバックのリアスロープ -->
-                <path d="M12,12 L9,19" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
-                <circle cx="13" cy="27" r="5.5" fill="#242424"/>
-                <circle cx="39" cy="27" r="5.5" fill="#242424"/>
-                <circle cx="13" cy="27" r="3.5"/>
-                <circle cx="39" cy="27" r="3.5"/>
-                <circle cx="13" cy="27" r="1.5" fill="#242424"/>
-                <circle cx="39" cy="27" r="1.5" fill="#242424"/>
+              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
               </svg>
-              <span>コンパクト</span>
+              <span class="slider-mitsubishi__tab-label">SERIES 04</span>
             </button>
 
-            <!-- Tab 4: 軽自動車 -->
+            <!-- Tab 4: SERIES 05 -->
             <button
               class="slider-mitsubishi__tab"
               role="tab"
@@ -172,22 +141,14 @@
               data-index="4"
               tabindex="-1"
             >
-              <!-- 軽自動車（超ボックス型・短いホイールベース） -->
-              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 52 30" aria-hidden="true">
-                <path d="M9,27 L9,17 Q9,12 12,11 L16,10 Q19,9 26,9 Q33,9 36,10 L40,11 Q43,12 43,17 L43,27 Z"/>
-                <circle cx="17" cy="27" r="5.5" fill="#242424"/>
-                <circle cx="35" cy="27" r="5.5" fill="#242424"/>
-                <circle cx="17" cy="27" r="3.5"/>
-                <circle cx="35" cy="27" r="3.5"/>
-                <circle cx="17" cy="27" r="1.5" fill="#242424"/>
-                <circle cx="35" cy="27" r="1.5" fill="#242424"/>
-                <!-- フロントフラット -->
-                <line x1="43" y1="11" x2="43" y2="20" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12,2 19,8 16,22 8,22 5,8"/>
+                <polyline points="5,8 12,13 19,8"/>
               </svg>
-              <span>軽自動車</span>
+              <span class="slider-mitsubishi__tab-label">SERIES 05</span>
             </button>
 
-            <!-- Tab 5: 商用車 -->
+            <!-- Tab 5: SERIES 06 -->
             <button
               class="slider-mitsubishi__tab"
               role="tab"
@@ -197,21 +158,10 @@
               data-index="5"
               tabindex="-1"
             >
-              <!-- 商用車（キャブオーバー・フラットノーズ） -->
-              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 52 30" aria-hidden="true">
-                <path d="M3,27 L3,16 Q3,11 6,10 L10,9 Q14,9 14,9 L14,8 Q14,8 26,8 L44,9 Q48,10 49,14 L49,27 Z"/>
-                <!-- キャブ部分 -->
-                <path d="M3,16 L14,16 L14,9 L6,10 Q3,11 3,16 Z" fill="#242424" opacity="0.3"/>
-                <circle cx="12" cy="27" r="6" fill="#242424"/>
-                <circle cx="40" cy="27" r="6" fill="#242424"/>
-                <circle cx="12" cy="27" r="4"/>
-                <circle cx="40" cy="27" r="4"/>
-                <circle cx="12" cy="27" r="1.5" fill="#242424"/>
-                <circle cx="40" cy="27" r="1.5" fill="#242424"/>
-                <!-- ボディとキャブの境界線 -->
-                <line x1="14" y1="9" x2="14" y2="21" stroke="#242424" stroke-width="1.5" opacity="0.6"/>
+              <svg class="slider-mitsubishi__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12,22s8-4,8-10V5l-8-3L4,5v7c0,6,8,10,8,10z"/>
               </svg>
-              <span>商用車</span>
+              <span class="slider-mitsubishi__tab-label">SERIES 06</span>
             </button>
           </nav>
         </div><!-- /.slider-mitsubishi__header -->
@@ -220,92 +170,92 @@
         <div class="slider-mitsubishi__stage">
           <div class="slider-mitsubishi__track">
 
-            <!-- Slide 0: EV/PHEV -->
+            <!-- Slide 0 -->
             <div
               class="slider-mitsubishi__item is-active"
               id="sm-slide-0"
               role="tabpanel"
               aria-labelledby="sm-tab-0"
-              data-caption="OUTLANDER PHEV"
+              data-caption="PRODUCT NAME 01"
             >
               <div class="slider-mitsubishi__image-wrap">
                 <div class="slider-mitsubishi__placeholder" aria-hidden="true">
-                  <span class="slider-mitsubishi__placeholder-label">EV / PHEV</span>
+                  <span class="slider-mitsubishi__placeholder-label">PRODUCT 01</span>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 1: SUV -->
+            <!-- Slide 1 -->
             <div
               class="slider-mitsubishi__item"
               id="sm-slide-1"
               role="tabpanel"
               aria-labelledby="sm-tab-1"
-              data-caption="ECLIPSE CROSS"
+              data-caption="PRODUCT NAME 02"
             >
               <div class="slider-mitsubishi__image-wrap">
                 <div class="slider-mitsubishi__placeholder" aria-hidden="true">
-                  <span class="slider-mitsubishi__placeholder-label">SUV</span>
+                  <span class="slider-mitsubishi__placeholder-label">PRODUCT 02</span>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 2: ミニバン -->
+            <!-- Slide 2 -->
             <div
               class="slider-mitsubishi__item"
               id="sm-slide-2"
               role="tabpanel"
               aria-labelledby="sm-tab-2"
-              data-caption="DELICA D:5"
+              data-caption="PRODUCT NAME 03"
             >
               <div class="slider-mitsubishi__image-wrap">
                 <div class="slider-mitsubishi__placeholder" aria-hidden="true">
-                  <span class="slider-mitsubishi__placeholder-label">ミニバン</span>
+                  <span class="slider-mitsubishi__placeholder-label">PRODUCT 03</span>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 3: コンパクト -->
+            <!-- Slide 3 -->
             <div
               class="slider-mitsubishi__item"
               id="sm-slide-3"
               role="tabpanel"
               aria-labelledby="sm-tab-3"
-              data-caption="COLT"
+              data-caption="PRODUCT NAME 04"
             >
               <div class="slider-mitsubishi__image-wrap">
                 <div class="slider-mitsubishi__placeholder" aria-hidden="true">
-                  <span class="slider-mitsubishi__placeholder-label">コンパクト</span>
+                  <span class="slider-mitsubishi__placeholder-label">PRODUCT 04</span>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 4: 軽自動車 -->
+            <!-- Slide 4 -->
             <div
               class="slider-mitsubishi__item"
               id="sm-slide-4"
               role="tabpanel"
               aria-labelledby="sm-tab-4"
-              data-caption="eK CROSS"
+              data-caption="PRODUCT NAME 05"
             >
               <div class="slider-mitsubishi__image-wrap">
                 <div class="slider-mitsubishi__placeholder" aria-hidden="true">
-                  <span class="slider-mitsubishi__placeholder-label">軽自動車</span>
+                  <span class="slider-mitsubishi__placeholder-label">PRODUCT 05</span>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 5: 商用車 -->
+            <!-- Slide 5 -->
             <div
               class="slider-mitsubishi__item"
               id="sm-slide-5"
               role="tabpanel"
               aria-labelledby="sm-tab-5"
-              data-caption="DELICA D:3"
+              data-caption="PRODUCT NAME 06"
             >
               <div class="slider-mitsubishi__image-wrap">
                 <div class="slider-mitsubishi__placeholder" aria-hidden="true">
-                  <span class="slider-mitsubishi__placeholder-label">商用車</span>
+                  <span class="slider-mitsubishi__placeholder-label">PRODUCT 06</span>
                 </div>
               </div>
             </div>
@@ -351,16 +301,16 @@
 
         </div><!-- /.slider-mitsubishi__stage -->
 
-        <!-- ── フッター：車名キャプション + CTA ── -->
+        <!-- ── フッター：キャプション + CTA ── -->
         <div class="slider-mitsubishi__footer">
           <p
             class="slider-mitsubishi__caption"
             aria-live="polite"
             aria-atomic="true"
-          >OUTLANDER PHEV</p>
+          >01 — PRODUCT NAME 01</p>
 
           <a class="slider-mitsubishi__cta" href="#">
-            カーラインアップから探す
+            製品一覧から探す
             <span class="slider-mitsubishi__cta-arrow" aria-hidden="true">→</span>
           </a>
         </div>
