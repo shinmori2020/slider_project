@@ -78,6 +78,111 @@
   letter-spacing: 0.04em;
 }
 
+/* ── Demo Info ── */
+.demo-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid #e8e8e8;
+  background: #fafafa;
+}
+
+.demo-info__desc {
+  padding: var(--space-lg);
+  border-right: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.demo-info__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.demo-info__number {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: #bbb;
+  text-transform: uppercase;
+}
+
+.demo-info__title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+}
+
+.demo-info__subtitle {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #aaa;
+  letter-spacing: 0.1em;
+}
+
+.demo-info__text {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: #555;
+  font-weight: 300;
+}
+
+.demo-info__specs {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.demo-info__spec-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px var(--space-lg);
+  align-items: baseline;
+}
+
+.demo-info__spec-row {
+  display: contents;
+}
+
+.demo-info__spec-key {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.demo-info__spec-val {
+  font-size: 0.9rem;
+  font-family: var(--font-display, monospace);
+  color: #333;
+  letter-spacing: 0.02em;
+}
+
+.demo-info__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.demo-info__tag {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+}
+
 /* ── Site Footer ── */
 .site-footer {
   background: #0d0d0d;
@@ -100,5 +205,19 @@
 
   .demo-section__label {
     padding: var(--space-sm) var(--space-md);
+  }
+
+  .demo-info {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-info__desc {
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+    padding: var(--space-md);
+  }
+
+  .demo-info__specs {
+    padding: var(--space-md);
   }
 }

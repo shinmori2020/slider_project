@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/slider/slider-tab-peek.css">
+  <link rel="stylesheet" href="css/slider/slider-fade-minimal.css">
 </head>
 <body>
 
@@ -23,6 +24,7 @@
       <p class="site-header__title">Slider Demo</p>
       <nav class="site-header__nav" aria-label="デモナビゲーション">
         <a href="#slider-01">01 タブ+Peek</a>
+        <a href="#slider-02">02 フェード</a>
       </nav>
     </div>
   </header>
@@ -32,11 +34,6 @@
 
     <!-- ══ No.01 三菱風 タブ連動 + Peek型 ══ -->
     <section class="demo-section" id="slider-01">
-      <div class="demo-section__label" aria-hidden="true">
-        <span class="demo-section__number">No.01</span>
-        <span class="demo-section__title">タブ連動 + Peek型スライダー</span>
-      </div>
-
       <div
         class="slider-mitsubishi"
         role="region"
@@ -316,7 +313,167 @@
         </div>
 
       </div><!-- /.slider-mitsubishi -->
+
+      <!-- ── 詳細情報 ── -->
+      <div class="demo-info">
+        <div class="demo-info__desc">
+          <div class="demo-info__heading">
+            <p class="demo-info__number">No.01</p>
+            <p class="demo-info__title">タブ連動 + Peek型スライダー</p>
+            <p class="demo-info__subtitle">Tab + Peek Slider</p>
+          </div>
+          <p class="demo-info__text">タブナビゲーションと連動し、前後のスライドが少しのぞくPeek型レイアウト。複数カテゴリを切り替えながら閲覧できる、製品ラインナップ展示などに適したUIです。</p>
+        </div>
+        <div class="demo-info__specs">
+          <dl class="demo-info__spec-list">
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Animation</dt>
+              <dd class="demo-info__spec-val">translateX</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Transition</dt>
+              <dd class="demo-info__spec-val">0.6s ease</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Autoplay</dt>
+              <dd class="demo-info__spec-val">4,000ms</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Slides</dt>
+              <dd class="demo-info__spec-val">6</dd>
+            </div>
+          </dl>
+          <ul class="demo-info__tags" aria-label="実装機能">
+            <li class="demo-info__tag">Autoplay</li>
+            <li class="demo-info__tag">Keyboard</li>
+            <li class="demo-info__tag">Touch</li>
+            <li class="demo-info__tag">A11y</li>
+            <li class="demo-info__tag">Tab Nav</li>
+            <li class="demo-info__tag">Peek</li>
+          </ul>
+        </div>
+      </div><!-- /.demo-info -->
+
     </section><!-- /#slider-01 -->
+
+    <!-- ══ No.02 Ron Herman 風 フェードスライダー ══ -->
+    <section class="demo-section" id="slider-02">
+      <div
+        class="slider-ronherman"
+        role="region"
+        aria-label="フェードスライダー"
+        tabindex="0"
+      >
+        <!-- スクリーンリーダー用ライブリージョン -->
+        <div
+          class="slider-ronherman__live visually-hidden"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <!-- ── スライドトラック ── -->
+        <div class="slider-ronherman__track">
+          <!-- Slide 1 -->
+          <div class="slider-ronherman__item is-active" aria-label="スライド 1">
+            <div class="slider-ronherman__placeholder" aria-hidden="true"></div>
+            <div class="slider-ronherman__caption">
+              <span class="slider-ronherman__caption-label">SS 2025 Collection</span>
+              <span class="slider-ronherman__caption-title">New Arrivals</span>
+              <span class="slider-ronherman__caption-desc">新作コレクションが到着。シーズンを彩る厳選アイテムをご覧ください。</span>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slider-ronherman__item" aria-label="スライド 2">
+            <div class="slider-ronherman__placeholder" aria-hidden="true"></div>
+            <div class="slider-ronherman__caption">
+              <span class="slider-ronherman__caption-label">SS 2025 Collection</span>
+              <span class="slider-ronherman__caption-title">Outdoor Style</span>
+              <span class="slider-ronherman__caption-desc">自然と調和するアウトドアスタイル。快適さと洗練を両立したコレクション。</span>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slider-ronherman__item" aria-label="スライド 3">
+            <div class="slider-ronherman__placeholder" aria-hidden="true"></div>
+            <div class="slider-ronherman__caption">
+              <span class="slider-ronherman__caption-label">SS 2025 Collection</span>
+              <span class="slider-ronherman__caption-title">Casual Wear</span>
+              <span class="slider-ronherman__caption-desc">日常を特別にするカジュアルウェア。上質な素材と着心地の良さを追求。</span>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slider-ronherman__item" aria-label="スライド 4">
+            <div class="slider-ronherman__placeholder" aria-hidden="true"></div>
+            <div class="slider-ronherman__caption">
+              <span class="slider-ronherman__caption-label">SS 2025 Collection</span>
+              <span class="slider-ronherman__caption-title">Beach Resort</span>
+              <span class="slider-ronherman__caption-desc">リゾートの開放感をまとうビーチスタイル。夏の定番アイテムが揃います。</span>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slider-ronherman__item" aria-label="スライド 5">
+            <div class="slider-ronherman__placeholder" aria-hidden="true"></div>
+            <div class="slider-ronherman__caption">
+              <span class="slider-ronherman__caption-label">SS 2025 Collection</span>
+              <span class="slider-ronherman__caption-title">City Look</span>
+              <span class="slider-ronherman__caption-desc">都会的な佇まいのシティルック。オンオフ問わず活躍するスタイリング。</span>
+            </div>
+          </div>
+
+        </div><!-- /.slider-ronherman__track -->
+
+        <!-- ── ドットナビゲーション ── -->
+        <div
+          class="slider-ronherman__dots"
+          role="tablist"
+          aria-label="スライド選択"
+        ></div>
+
+      </div><!-- /.slider-ronherman -->
+
+      <!-- ── 詳細情報 ── -->
+      <div class="demo-info">
+        <div class="demo-info__desc">
+          <div class="demo-info__heading">
+            <p class="demo-info__number">No.02</p>
+            <p class="demo-info__title">フェードスライダー</p>
+            <p class="demo-info__subtitle">Fade Slider</p>
+          </div>
+          <p class="demo-info__text">opacityの変化のみでスライドを切り替えるフェードスライダー。位置移動がなく落ち着いた印象を与えるため、ファッション・ライフスタイル系サイトのビジュアル展示に最適なUIです。</p>
+        </div>
+        <div class="demo-info__specs">
+          <dl class="demo-info__spec-list">
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Animation</dt>
+              <dd class="demo-info__spec-val">opacity fade</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Transition</dt>
+              <dd class="demo-info__spec-val">0.75s ease</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Autoplay</dt>
+              <dd class="demo-info__spec-val">4,500ms</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Slides</dt>
+              <dd class="demo-info__spec-val">5</dd>
+            </div>
+          </dl>
+          <ul class="demo-info__tags" aria-label="実装機能">
+            <li class="demo-info__tag">Autoplay</li>
+            <li class="demo-info__tag">Keyboard</li>
+            <li class="demo-info__tag">Touch</li>
+            <li class="demo-info__tag">A11y</li>
+            <li class="demo-info__tag">Dots Nav</li>
+          </ul>
+        </div>
+      </div><!-- /.demo-info -->
+
+    </section><!-- /#slider-02 -->
 
   </main>
 
@@ -327,6 +484,7 @@
 
   <!-- JS（slider → main の順に読み込む） -->
   <script src="js/slider/slider-tab-peek.js"></script>
+  <script src="js/slider/slider-fade-minimal.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

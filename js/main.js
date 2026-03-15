@@ -7,3 +7,8 @@
 document.querySelectorAll('.slider-mitsubishi').forEach(el => {
   new SliderTabPeek(el);
 });
+
+/* ── No.02 フェードスライダー ── */
+document.querySelectorAll('.slider-ronherman').forEach(el => {
+  new SliderFadeMinimal(el);
+});

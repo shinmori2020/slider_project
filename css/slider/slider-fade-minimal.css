@@ -1,0 +1,182 @@
+/* ============================================================
+   slider-fade-minimal.css — No.02 Ron Herman 風フェードスライダー
+   ============================================================ */
+
+.slider-ronherman {
+  --sfm-bg:         #f5f5f0;
+  --sfm-dot:        rgba(0, 0, 0, 0.22);
+  --sfm-dot-active: rgba(0, 0, 0, 0.62);
+  --sfm-ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --sfm-duration:   0.75s;
+
+  background: var(--sfm-bg);
+  padding: 0;
+}
+
+/* ── Track ── */
+.slider-ronherman__track {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+}
+
+/* ── Items ── */
+.slider-ronherman__item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--sfm-duration) var(--sfm-ease);
+}
+
+.slider-ronherman__item.is-active {
+  opacity: 1;
+}
+
+/* ── Caption (画像上オーバーレイ) ── */
+.slider-ronherman__caption {
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+}
+
+.slider-ronherman__caption-label {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.slider-ronherman__caption-title {
+  font-family: var(--font-display, serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.slider-ronherman__caption-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+}
+
+/* ── Placeholder images (gradient) ── */
+.slider-ronherman__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-ronherman__placeholder::before {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 90px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 76' fill='none'><rect x='2' y='2' width='76' height='56' rx='2' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><circle cx='16' cy='16' r='7' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><polyline points='4,57 20,36 38,50 58,36 76,57' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/><text x='40' y='72' text-anchor='middle' font-size='9' font-family='sans-serif' fill='rgba(255,255,255,0.45)' letter-spacing='2'>NO IMAGE</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.slider-ronherman__item:nth-child(1) .slider-ronherman__placeholder {
+  background: linear-gradient(135deg, #a0a0a0 0%, #787878 100%);
+}
+.slider-ronherman__item:nth-child(2) .slider-ronherman__placeholder {
+  background: linear-gradient(135deg, #969696 0%, #6e6e6e 100%);
+}
+.slider-ronherman__item:nth-child(3) .slider-ronherman__placeholder {
+  background: linear-gradient(135deg, #ababab 0%, #858585 100%);
+}
+.slider-ronherman__item:nth-child(4) .slider-ronherman__placeholder {
+  background: linear-gradient(135deg, #8e8e8e 0%, #666666 100%);
+}
+.slider-ronherman__item:nth-child(5) .slider-ronherman__placeholder {
+  background: linear-gradient(135deg, #9a9a9a 0%, #747474 100%);
+}
+
+/* ── Dots ── */
+.slider-ronherman__dots {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 24px 0;
+}
+
+.slider-ronherman__dot {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border: none;
+  border-radius: 1px;
+  padding: 0;
+  cursor: pointer;
+  background: var(--sfm-dot);
+  transition: background 0.3s ease;
+}
+
+.slider-ronherman__dot.is-active,
+.slider-ronherman__dot[aria-selected="true"] {
+  background: var(--sfm-dot-active);
+}
+
+.slider-ronherman__dot:focus-visible {
+  outline: 2px solid var(--color-accent, #555);
+  outline-offset: 3px;
+}
+
+/* ── SP ── */
+@media (max-width: 767px) {
+  .slider-ronherman__track {
+    aspect-ratio: 3 / 2;
+  }
+
+  .slider-ronherman__caption {
+    bottom: 24px;
+    left: 20px;
+    max-width: 280px;
+    gap: 6px;
+  }
+
+  .slider-ronherman__caption-label {
+    font-size: 0.75rem;
+  }
+
+  .slider-ronherman__caption-title {
+    font-size: 1.5rem;
+  }
+
+  .slider-ronherman__caption-desc {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .slider-ronherman__dots {
+    padding: 10px 16px 0;
+    gap: 5px;
+  }
+
+  .slider-ronherman__dot {
+    width: 18px;
+  }
+}
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slider-ronherman__item {
+    transition-duration: 0.01ms !important;
+  }
+}

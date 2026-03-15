@@ -160,6 +160,17 @@
   background: linear-gradient(160deg, #6e6e6e 0%, #888888 40%, #707070 100%);
 }
 
+.slider-mitsubishi__placeholder::before {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 76px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 64' fill='none'><rect x='2' y='2' width='76' height='56' rx='2' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><circle cx='16' cy='16' r='7' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><polyline points='4,57 20,36 38,50 58,36 76,57' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .slider-mitsubishi__placeholder-label {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
