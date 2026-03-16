@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/slider/slider-tab-peek.css">
   <link rel="stylesheet" href="css/slider/slider-fade-minimal.css">
   <link rel="stylesheet" href="css/slider/slider-2col-text.css">
+  <link rel="stylesheet" href="css/slider/slider-2col-image.css">
 </head>
 <body>
 
@@ -27,6 +28,7 @@
         <a href="#slider-01">01 タブ+Peek</a>
         <a href="#slider-02">02 フェード</a>
         <a href="#slider-03">03 2カラム</a>
+        <a href="#slider-04">04 2カラム画像</a>
       </nav>
     </div>
   </header>
@@ -610,6 +612,174 @@
 
     </section><!-- /#slider-03 -->
 
+    <!-- ══ No.04 TOYOTA風 2カラム 画像＋テキスト ══ -->
+    <section class="demo-section" id="slider-04">
+      <div
+        class="slider-toyota"
+        role="region"
+        aria-label="2カラム 画像＋テキストスライダー"
+        tabindex="0"
+      >
+        <!-- スクリーンリーダー用ライブリージョン -->
+        <div
+          class="slider-toyota__live visually-hidden"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <!-- ── 2カラムレイアウト ── -->
+        <div class="slider-toyota__layout">
+
+          <!-- 左カラム：画像スライダー -->
+          <div class="slider-toyota__slider">
+            <div class="slider-toyota__viewport">
+              <div class="slider-toyota__track">
+
+                <!-- Slide 1 -->
+                <div class="slider-toyota__item" aria-label="スライド 1">
+                  <div class="slider-toyota__placeholder" style="background:linear-gradient(135deg,#4a4a4a 0%,#2a2a2a 100%)" aria-hidden="true"></div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slider-toyota__item" aria-label="スライド 2">
+                  <div class="slider-toyota__placeholder" style="background:linear-gradient(135deg,#555 0%,#333 100%)" aria-hidden="true"></div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slider-toyota__item" aria-label="スライド 3">
+                  <div class="slider-toyota__placeholder" style="background:linear-gradient(135deg,#3e3e3e 0%,#1e1e1e 100%)" aria-hidden="true"></div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slider-toyota__item" aria-label="スライド 4">
+                  <div class="slider-toyota__placeholder" style="background:linear-gradient(135deg,#484848 0%,#282828 100%)" aria-hidden="true"></div>
+                </div>
+
+              </div><!-- /.slider-toyota__track -->
+            </div><!-- /.slider-toyota__viewport -->
+
+            <!-- 矢印ボタン（画像内） -->
+            <button class="slider-toyota__btn slider-toyota__btn--prev" aria-label="前のスライドへ">
+              <svg class="slider-toyota__btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="12,4 6,10 12,16"/>
+              </svg>
+            </button>
+            <button class="slider-toyota__btn slider-toyota__btn--next" aria-label="次のスライドへ">
+              <svg class="slider-toyota__btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="8,4 14,10 8,16"/>
+              </svg>
+            </button>
+
+            <!-- ドットナビゲーション -->
+            <div class="slider-toyota__dots" role="tablist" aria-label="スライド選択"></div>
+          </div><!-- /.slider-toyota__slider -->
+
+          <!-- 右カラム：テキスト（スライド連動切り替え） -->
+          <div class="slider-toyota__info">
+
+            <!-- Info 1 -->
+            <div class="slider-toyota__info-item is-active">
+              <span class="slider-toyota__category">Category A</span>
+              <h3 class="slider-toyota__name">PRODUCT ONE</h3>
+              <p class="slider-toyota__desc">一目惚れするデザインと虜になる走り。使うほどに愛が深まる、プロダクトの先駆け。洗練されたフォルムと革新的なテクノロジーが融合し、日々の暮らしに新しい価値を提供します。</p>
+              <ul class="slider-toyota__features">
+                <li>感性に響くスタイリッシュデザイン</li>
+                <li>機能性とワクワク感を両立した空間</li>
+                <li>優れたパフォーマンスと効率性</li>
+                <li>直感的な操作を実現するインターフェース</li>
+              </ul>
+              <a class="slider-toyota__cta" href="#">詳細はこちら</a>
+            </div>
+
+            <!-- Info 2 -->
+            <div class="slider-toyota__info-item">
+              <span class="slider-toyota__category">Category B</span>
+              <h3 class="slider-toyota__name">PRODUCT TWO</h3>
+              <p class="slider-toyota__desc">力強さと洗練を兼ね備えたデザイン。あらゆるシーンで頼れるパートナー。タフな環境にも対応する耐久性と、都市での使い勝手を両立した万能なプロダクトです。</p>
+              <ul class="slider-toyota__features">
+                <li>堅牢でありながら美しいフォルム</li>
+                <li>広々とした快適な空間設計</li>
+                <li>先進の安全技術を標準装備</li>
+                <li>多彩なカスタマイズオプション</li>
+              </ul>
+              <a class="slider-toyota__cta" href="#">詳細はこちら</a>
+            </div>
+
+            <!-- Info 3 -->
+            <div class="slider-toyota__info-item">
+              <span class="slider-toyota__category">Category C</span>
+              <h3 class="slider-toyota__name">PRODUCT THREE</h3>
+              <p class="slider-toyota__desc">コンパクトなボディに詰まった可能性。日常を軽やかに変えるスマートチョイス。限られたスペースでも最大限のパフォーマンスを発揮し、都市生活にフィットします。</p>
+              <ul class="slider-toyota__features">
+                <li>取り回しの良いコンパクト設計</li>
+                <li>低燃費で経済性に優れた性能</li>
+                <li>最新コネクティッド機能搭載</li>
+                <li>充実の収納スペースと実用性</li>
+              </ul>
+              <a class="slider-toyota__cta" href="#">詳細はこちら</a>
+            </div>
+
+            <!-- Info 4 -->
+            <div class="slider-toyota__info-item">
+              <span class="slider-toyota__category">Category D</span>
+              <h3 class="slider-toyota__name">PRODUCT FOUR</h3>
+              <p class="slider-toyota__desc">プレミアムな存在感と圧倒的な快適性。所有する喜びを感じさせる最上級の品質。素材の選定からディテールの仕上げまで、すべてにこだわり抜いたフラッグシップモデルです。</p>
+              <ul class="slider-toyota__features">
+                <li>上質な素材と精緻なクラフトマンシップ</li>
+                <li>静粛性に優れた上質な乗り心地</li>
+                <li>最先端のドライビングアシスト</li>
+                <li>パーソナライズされた特別な体験</li>
+              </ul>
+              <a class="slider-toyota__cta" href="#">詳細はこちら</a>
+            </div>
+
+          </div><!-- /.slider-toyota__info -->
+
+        </div><!-- /.slider-toyota__layout -->
+
+      </div><!-- /.slider-toyota -->
+
+      <!-- ── 詳細情報 ── -->
+      <div class="demo-info">
+        <div class="demo-info__desc">
+          <div class="demo-info__heading">
+            <p class="demo-info__number">No.04</p>
+            <p class="demo-info__title">2カラム 画像＋テキストスライダー</p>
+            <p class="demo-info__subtitle">Two-Column Image + Text Slider</p>
+          </div>
+          <p class="demo-info__text">左に画像スライダー、右にテキスト情報を配置した2カラム構成。画像の切り替えに連動して右側のテキストもフェードで切り替わり、製品詳細の訴求に適したUIです。</p>
+        </div>
+        <div class="demo-info__specs">
+          <dl class="demo-info__spec-list">
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Animation</dt>
+              <dd class="demo-info__spec-val">translateX + fade</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Transition</dt>
+              <dd class="demo-info__spec-val">0.6s ease</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Autoplay</dt>
+              <dd class="demo-info__spec-val">off (manual)</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Slides</dt>
+              <dd class="demo-info__spec-val">4</dd>
+            </div>
+          </dl>
+          <ul class="demo-info__tags" aria-label="実装機能">
+            <li class="demo-info__tag">Keyboard</li>
+            <li class="demo-info__tag">Touch</li>
+            <li class="demo-info__tag">A11y</li>
+            <li class="demo-info__tag">Dots Nav</li>
+            <li class="demo-info__tag">2-Column</li>
+          </ul>
+        </div>
+      </div><!-- /.demo-info -->
+
+    </section><!-- /#slider-04 -->
+
   </main>
 
   <!-- ── Site Footer ── -->
@@ -621,6 +791,7 @@
   <script src="js/slider/slider-tab-peek.js"></script>
   <script src="js/slider/slider-fade-minimal.js"></script>
   <script src="js/slider/slider-2col-text.js"></script>
+  <script src="js/slider/slider-2col-image.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

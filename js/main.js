@@ -17,3 +17,8 @@ document.querySelectorAll('.slider-ronherman').forEach(el => {
 document.querySelectorAll('.slider-tsukuba').forEach(el => {
   new Slider2ColText(el);
 });
+
+/* ── No.04 2カラム 画像＋テキスト ── */
+document.querySelectorAll('.slider-toyota').forEach(el => {
+  new Slider2ColImage(el);
+});

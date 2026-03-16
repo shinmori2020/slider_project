@@ -1,0 +1,283 @@
+/* ============================================================
+   slider-2col-image.css — No.04 TOYOTA風 2カラム 画像＋テキストスライダー
+   左画像スライド + 右テキスト連動切り替え
+   ============================================================ */
+
+.slider-toyota {
+  --sto-bg:         #ffffff;
+  --sto-dot:        #ccc;
+  --sto-dot-active: #1a1a1a;
+  --sto-ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --sto-duration:   0.6s;
+
+  background: var(--sto-bg);
+  position: relative;
+  padding: 48px 40px;
+}
+
+/* ── 2カラムレイアウト ── */
+.slider-toyota__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* ── Image Slider (左カラム) ── */
+.slider-toyota__slider {
+  position: relative;
+}
+
+.slider-toyota__viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.slider-toyota__track {
+  display: flex;
+  transition: transform var(--sto-duration) var(--sto-ease);
+  will-change: transform;
+}
+
+.slider-toyota__track.no-transition {
+  transition: none !important;
+}
+
+.slider-toyota__item {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+/* ── Placeholder ── */
+.slider-toyota__placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-toyota__placeholder::before {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 90px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 76' fill='none'><rect x='2' y='2' width='76' height='56' rx='2' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><circle cx='16' cy='16' r='7' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><polyline points='4,57 20,36 38,50 58,36 76,57' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/><text x='40' y='72' text-anchor='middle' font-size='9' font-family='sans-serif' fill='rgba(255,255,255,0.45)' letter-spacing='2'>NO IMAGE</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* ── 矢印ボタン（画像内・控えめ） ── */
+.slider-toyota__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.35);
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  z-index: 2;
+}
+
+.slider-toyota__btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-toyota__btn:focus-visible {
+  outline: 2px solid var(--sto-dot-active);
+  outline-offset: 2px;
+}
+
+.slider-toyota__btn--prev {
+  left: 12px;
+}
+
+.slider-toyota__btn--next {
+  right: 12px;
+}
+
+.slider-toyota__btn-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── ドット（画像下・左寄せ） ── */
+.slider-toyota__dots {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0 0 16px;
+}
+
+.slider-toyota__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--sto-dot);
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 0;
+}
+
+.slider-toyota__dot.is-active {
+  background: var(--sto-dot-active);
+}
+
+.slider-toyota__dot:focus-visible {
+  outline: 2px solid var(--sto-dot-active);
+  outline-offset: 2px;
+}
+
+/* ── Info (右カラム・テキスト) ── */
+.slider-toyota__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 48px;
+}
+
+.slider-toyota__category {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #888;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.slider-toyota__name {
+  font-family: var(--font-display, serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.slider-toyota__desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #555;
+  margin: 0 0 28px;
+}
+
+.slider-toyota__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.slider-toyota__features li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 2;
+}
+
+.slider-toyota__features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 1px;
+  background: #333;
+}
+
+.slider-toyota__cta {
+  display: inline-block;
+  padding: 18px 48px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  align-self: flex-start;
+}
+
+.slider-toyota__cta:hover {
+  background: #333;
+}
+
+.slider-toyota__sub-link {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #888;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.slider-toyota__sub-link:hover {
+  color: #333;
+}
+
+/* ── テキスト切り替えアニメーション ── */
+.slider-toyota__info-item {
+  display: none;
+}
+
+.slider-toyota__info-item.is-active {
+  display: flex;
+  flex-direction: column;
+  animation: sto-fadeIn 0.5s ease;
+}
+
+@keyframes sto-fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SP ── */
+@media (max-width: 767px) {
+  .slider-toyota {
+    padding: 32px 16px;
+  }
+
+  .slider-toyota__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-toyota__info {
+    padding: 24px 0 0;
+  }
+
+  .slider-toyota__name {
+    font-size: 1.75rem;
+  }
+
+  .slider-toyota__desc {
+    font-size: 0.8125rem;
+  }
+
+  .slider-toyota__btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slider-toyota__track {
+    transition-duration: 0.01ms !important;
+  }
+  .slider-toyota__info-item.is-active {
+    animation: none;
+  }
+}
