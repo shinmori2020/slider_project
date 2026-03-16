@@ -1,0 +1,256 @@
+/* ============================================================
+   slider-2col-text.css — No.03 つくば風 2カラム テキスト＋画像スライダー
+   左テキスト固定 + 右画像スライド構成
+   ============================================================ */
+
+.slider-tsukuba {
+  --st-bg:       #ffffff;
+  --st-accent:   #4caf50;
+  --st-accent-h: #388e3c;
+  --st-ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --st-duration: 0.6s;
+
+  background: var(--st-bg);
+  position: relative;
+  padding: 48px 40px;
+}
+
+/* ── 2カラムレイアウト ── */
+.slider-tsukuba__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* ── Content (左カラム・固定) ── */
+.slider-tsukuba__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 48px;
+}
+
+.slider-tsukuba__label {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--st-accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.slider-tsukuba__title {
+  font-family: var(--font-body, sans-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+
+/* ── ドット装飾ライン ── */
+.slider-tsukuba__dots-line {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.slider-tsukuba__dots-line span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--st-accent);
+  opacity: 0.5;
+}
+
+.slider-tsukuba__desc {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #555;
+  margin: 0 0 24px;
+}
+
+.slider-tsukuba__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--st-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.slider-tsukuba__link:hover {
+  color: var(--st-accent-h);
+}
+
+.slider-tsukuba__link-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.slider-tsukuba__link:hover .slider-tsukuba__link-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Slider (右カラム) ── */
+.slider-tsukuba__slider {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-tsukuba__viewport {
+  overflow: hidden;
+  width: 100%;
+  flex: 1;
+  border-radius: 12px;
+}
+
+.slider-tsukuba__track {
+  display: flex;
+  height: 100%;
+  transition: transform var(--st-duration) var(--st-ease);
+  will-change: transform;
+}
+
+.slider-tsukuba__track.no-transition {
+  transition: none !important;
+}
+
+.slider-tsukuba__item {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+/* ── Placeholder ── */
+.slider-tsukuba__placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-tsukuba__placeholder::before {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 90px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 76' fill='none'><rect x='2' y='2' width='76' height='56' rx='2' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><circle cx='16' cy='16' r='7' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><polyline points='4,57 20,36 38,50 58,36 76,57' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/><text x='40' y='72' text-anchor='middle' font-size='9' font-family='sans-serif' fill='rgba(255,255,255,0.45)' letter-spacing='2'>NO IMAGE</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* 背景はHTMLの style 属性で直接指定（クローンでnth-childがずれるため） */
+
+/* ── Controls (右カラム下部：番号 + 矢印) ── */
+.slider-tsukuba__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: transparent;
+}
+
+.slider-tsukuba__counter {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #888;
+  letter-spacing: 0.08em;
+}
+
+.slider-tsukuba__counter-current {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 1.125rem;
+}
+
+.slider-tsukuba__arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.slider-tsukuba__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #999;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.slider-tsukuba__btn:hover {
+  background: #666;
+  transform: scale(1.08);
+}
+
+.slider-tsukuba__btn:focus-visible {
+  outline: 2px solid var(--st-accent);
+  outline-offset: 3px;
+}
+
+.slider-tsukuba__btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── SP ── */
+@media (max-width: 767px) {
+  .slider-tsukuba {
+    padding: 32px 16px;
+  }
+
+  .slider-tsukuba__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-tsukuba__content {
+    padding: 32px 20px;
+    order: 2;
+  }
+
+  .slider-tsukuba__slider {
+    order: 1;
+  }
+
+  .slider-tsukuba__placeholder {
+    min-height: 240px;
+  }
+
+  .slider-tsukuba__title {
+    font-size: 1.5rem;
+  }
+
+  .slider-tsukuba__desc {
+    font-size: 0.8125rem;
+  }
+
+  .slider-tsukuba__controls {
+    padding: 12px 16px;
+  }
+
+  .slider-tsukuba__btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slider-tsukuba__track {
+    transition-duration: 0.01ms !important;
+  }
+}

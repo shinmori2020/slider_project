@@ -12,3 +12,8 @@ document.querySelectorAll('.slider-mitsubishi').forEach(el => {
 document.querySelectorAll('.slider-ronherman').forEach(el => {
   new SliderFadeMinimal(el);
 });
+
+/* ── No.03 2カラム テキスト＋画像 ── */
+document.querySelectorAll('.slider-tsukuba').forEach(el => {
+  new Slider2ColText(el);
+});

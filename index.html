@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/slider/slider-tab-peek.css">
   <link rel="stylesheet" href="css/slider/slider-fade-minimal.css">
+  <link rel="stylesheet" href="css/slider/slider-2col-text.css">
 </head>
 <body>
 
@@ -25,6 +26,7 @@
       <nav class="site-header__nav" aria-label="デモナビゲーション">
         <a href="#slider-01">01 タブ+Peek</a>
         <a href="#slider-02">02 フェード</a>
+        <a href="#slider-03">03 2カラム</a>
       </nav>
     </div>
   </header>
@@ -475,6 +477,139 @@
 
     </section><!-- /#slider-02 -->
 
+    <!-- ══ No.03 つくば風 2カラム テキスト＋画像 ══ -->
+    <section class="demo-section" id="slider-03">
+      <div
+        class="slider-tsukuba"
+        role="region"
+        aria-label="2カラム テキスト＋画像スライダー"
+        tabindex="0"
+      >
+        <!-- スクリーンリーダー用ライブリージョン -->
+        <div
+          class="slider-tsukuba__live visually-hidden"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <!-- ── 2カラムレイアウト ── -->
+        <div class="slider-tsukuba__layout">
+
+          <!-- 左カラム：テキスト（固定） -->
+          <div class="slider-tsukuba__content">
+            <span class="slider-tsukuba__label">Feature</span>
+            <h3 class="slider-tsukuba__title">ライフスタイル<br>暮らしのデザイン</h3>
+            <div class="slider-tsukuba__dots-line" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="slider-tsukuba__desc">日々の暮らしを豊かにするデザインの提案。空間と機能の調和が、新しいライフスタイルを生み出します。</p>
+            <a class="slider-tsukuba__link" href="#">
+              Recommend
+              <span class="slider-tsukuba__link-arrow" aria-hidden="true">›</span>
+            </a>
+          </div>
+
+          <!-- 右カラム：画像スライダー -->
+          <div class="slider-tsukuba__slider">
+            <div class="slider-tsukuba__viewport">
+              <div class="slider-tsukuba__track">
+
+                <!-- Slide 1 -->
+                <div class="slider-tsukuba__item" aria-label="スライド 1">
+                  <div class="slider-tsukuba__placeholder" style="background:linear-gradient(135deg,#a0a0a0 0%,#787878 100%)" aria-hidden="true"></div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slider-tsukuba__item" aria-label="スライド 2">
+                  <div class="slider-tsukuba__placeholder" style="background:linear-gradient(135deg,#969696 0%,#6e6e6e 100%)" aria-hidden="true"></div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slider-tsukuba__item" aria-label="スライド 3">
+                  <div class="slider-tsukuba__placeholder" style="background:linear-gradient(135deg,#ababab 0%,#858585 100%)" aria-hidden="true"></div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slider-tsukuba__item" aria-label="スライド 4">
+                  <div class="slider-tsukuba__placeholder" style="background:linear-gradient(135deg,#8e8e8e 0%,#666666 100%)" aria-hidden="true"></div>
+                </div>
+
+              </div><!-- /.slider-tsukuba__track -->
+            </div><!-- /.slider-tsukuba__viewport -->
+
+            <!-- コントロール：番号 + 矢印 -->
+            <div class="slider-tsukuba__controls">
+              <p class="slider-tsukuba__counter">
+                <span class="slider-tsukuba__counter-current">01</span>
+                <span> / </span>
+                <span class="slider-tsukuba__counter-total">04</span>
+              </p>
+              <div class="slider-tsukuba__arrows">
+                <button
+                  class="slider-tsukuba__btn slider-tsukuba__btn--prev"
+                  aria-label="前のスライドへ"
+                >
+                  <svg class="slider-tsukuba__btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="12,4 6,10 12,16"/>
+                  </svg>
+                </button>
+                <button
+                  class="slider-tsukuba__btn slider-tsukuba__btn--next"
+                  aria-label="次のスライドへ"
+                >
+                  <svg class="slider-tsukuba__btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="8,4 14,10 8,16"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div><!-- /.slider-tsukuba__slider -->
+
+        </div><!-- /.slider-tsukuba__layout -->
+
+      </div><!-- /.slider-tsukuba -->
+
+      <!-- ── 詳細情報 ── -->
+      <div class="demo-info">
+        <div class="demo-info__desc">
+          <div class="demo-info__heading">
+            <p class="demo-info__number">No.03</p>
+            <p class="demo-info__title">2カラム テキスト＋画像スライダー</p>
+            <p class="demo-info__subtitle">Two-Column Text + Image Slider</p>
+          </div>
+          <p class="demo-info__text">左にテキスト、右に画像を配置した2カラム構成のスライダー。テキストと画像がセットで横スクロールし、コンテンツの訴求力を高めるレイアウトです。</p>
+        </div>
+        <div class="demo-info__specs">
+          <dl class="demo-info__spec-list">
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Animation</dt>
+              <dd class="demo-info__spec-val">translateX</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Transition</dt>
+              <dd class="demo-info__spec-val">0.6s ease</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Autoplay</dt>
+              <dd class="demo-info__spec-val">4,000ms</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Slides</dt>
+              <dd class="demo-info__spec-val">4</dd>
+            </div>
+          </dl>
+          <ul class="demo-info__tags" aria-label="実装機能">
+            <li class="demo-info__tag">Autoplay</li>
+            <li class="demo-info__tag">Keyboard</li>
+            <li class="demo-info__tag">Touch</li>
+            <li class="demo-info__tag">A11y</li>
+            <li class="demo-info__tag">2-Column</li>
+          </ul>
+        </div>
+      </div><!-- /.demo-info -->
+
+    </section><!-- /#slider-03 -->
+
   </main>
 
   <!-- ── Site Footer ── -->
@@ -485,6 +620,7 @@
   <!-- JS（slider → main の順に読み込む） -->
   <script src="js/slider/slider-tab-peek.js"></script>
   <script src="js/slider/slider-fade-minimal.js"></script>
+  <script src="js/slider/slider-2col-text.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
