@@ -1,0 +1,274 @@
+/* ============================================================
+   slider-carousel.css — No.05 あまから手帖風 Ranking カルーセル
+   ============================================================ */
+
+.slider-ranking {
+  --sr-bg:       #ffffff;
+  --sr-accent:   #e53935;
+  --sr-accent-h: #c62828;
+  --sr-text:     #333333;
+  --sr-muted:    #999999;
+  --sr-ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --sr-duration: 0.5s;
+
+  background: var(--sr-bg);
+  padding: 56px 0;
+  padding-left: 24px;
+  overflow: hidden;
+  overflow-x: clip;
+}
+
+/* ── 2カラムレイアウト: 左ヘッダー固定 + 右カルーセル（右端まで） ── */
+.slider-ranking__layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── 左カラム：タイトル + ナビ ── */
+.slider-ranking__header {
+  position: sticky;
+  top: 40px;
+  padding-top: 0;
+  text-align: center;
+}
+
+.slider-ranking__title {
+  font-family: var(--font-display, serif);
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: var(--sr-text);
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.slider-ranking__subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--sr-muted);
+  letter-spacing: 0.02em;
+  margin: 0 0 28px;
+}
+
+.slider-ranking__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.slider-ranking__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 6px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--sr-muted);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.slider-ranking__btn:hover {
+  color: var(--sr-text);
+}
+
+.slider-ranking__btn:focus-visible {
+  outline: 2px solid var(--sr-accent);
+  outline-offset: 3px;
+}
+
+.slider-ranking__btn-icon {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.slider-ranking__btn:hover .slider-ranking__btn-icon {
+  border-color: var(--sr-text);
+}
+
+.slider-ranking__btn-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ── 右カラム：カルーセル ── */
+.slider-ranking__carousel {
+  overflow: hidden;
+}
+
+.slider-ranking__track {
+  display: flex;
+  gap: 20px;
+  transition: transform var(--sr-duration) var(--sr-ease);
+  will-change: transform;
+}
+
+/* ── カード ── */
+.slider-ranking__card {
+  flex-shrink: 0;
+  width: 390px;
+}
+
+.slider-ranking__card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+/* ── 順位バッジ ── */
+.slider-ranking__rank {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+.slider-ranking__rank-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── プレースホルダー ── */
+.slider-ranking__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-ranking__placeholder::before {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 68px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 76' fill='none'><rect x='2' y='2' width='76' height='56' rx='2' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><circle cx='16' cy='16' r='7' stroke='rgba(255,255,255,0.45)' stroke-width='1.8'/><polyline points='4,57 20,36 38,50 58,36 76,57' stroke='rgba(255,255,255,0.45)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/><text x='40' y='72' text-anchor='middle' font-size='9' font-family='sans-serif' fill='rgba(255,255,255,0.45)' letter-spacing='2'>NO IMAGE</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* ── カテゴリタグ ── */
+.slider-ranking__tag {
+  display: inline-block;
+  background: #888888;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+/* ── カードタイトル ── */
+.slider-ranking__card-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--sr-text);
+  line-height: 1.6;
+  margin: 0 0 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── 日付 ── */
+.slider-ranking__date {
+  font-size: 0.8125rem;
+  color: var(--sr-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Tablet以下で1カラム ── */
+@media (max-width: 1024px) {
+  .slider-ranking__layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .slider-ranking__header {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 16px;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .slider-ranking__nav {
+    margin-left: auto;
+  }
+}
+
+/* ── SP ── */
+@media (max-width: 767px) {
+  .slider-ranking {
+    padding: 36px 0;
+    padding-left: 16px;
+  }
+
+  .slider-ranking__layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .slider-ranking__header {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 16px;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .slider-ranking__title {
+    font-size: 1.75rem;
+  }
+
+  .slider-ranking__subtitle {
+    margin-bottom: 0;
+  }
+
+  .slider-ranking__nav {
+    margin-left: auto;
+  }
+
+  .slider-ranking__card {
+    width: calc(50vw - 32px);
+  }
+}
+
+/* ── 極小SP ── */
+@media (max-width: 480px) {
+  .slider-ranking__card {
+    width: calc(70vw - 24px);
+  }
+}
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slider-ranking__track {
+    transition-duration: 0.01ms !important;
+  }
+}

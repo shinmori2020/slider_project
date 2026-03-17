@@ -13,6 +13,7 @@
   background: var(--st-bg);
   position: relative;
   padding: 48px 40px;
+  overflow: hidden;
 }
 
 /* ── 2カラムレイアウト ── */
@@ -102,6 +103,8 @@
 .slider-tsukuba__slider {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .slider-tsukuba__viewport {
@@ -123,8 +126,8 @@
 }
 
 .slider-tsukuba__item {
-  min-width: 100%;
   flex-shrink: 0;
+  /* 幅はJSで明示的にpx設定 */
 }
 
 /* ── Placeholder ── */
@@ -207,8 +210,8 @@
   height: 18px;
 }
 
-/* ── SP ── */
-@media (max-width: 767px) {
+/* ── Tablet以下で1カラム ── */
+@media (max-width: 1024px) {
   .slider-tsukuba {
     padding: 32px 16px;
   }
@@ -224,6 +227,13 @@
 
   .slider-tsukuba__slider {
     order: 1;
+  }
+}
+
+/* ── SP ── */
+@media (max-width: 767px) {
+  .slider-tsukuba {
+    padding: 32px 16px;
   }
 
   .slider-tsukuba__placeholder {

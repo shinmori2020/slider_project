@@ -36,10 +36,14 @@ class Slider2ColText {
 
     // クローンを生成して無限ループ用に配置
     this.buildClones();
+    this.allItems = Array.from(this.track.querySelectorAll('.slider-tsukuba__item'));
 
     if (this.counterTotal) {
       this.counterTotal.textContent = String(this.total).padStart(2, '0');
     }
+
+    // アイテム幅を明示的に設定
+    this.updateItemWidths();
 
     // クローン分だけオフセット（先頭に1つクローンがあるので index=1 が実質スライド1）
     this.current = 0;
@@ -62,6 +66,14 @@ class Slider2ColText {
     this.track.insertBefore(lastClone, this.track.firstChild);
   }
 
+  /* ── アイテム幅をビューポート幅に合わせて設定 ── */
+  updateItemWidths() {
+    const w = this.viewport.offsetWidth;
+    this.allItems.forEach(item => {
+      item.style.width = w + 'px';
+    });
+  }
+
   /* ── 位置セット（trackIndex = クローン含むインデックス） ── */
   setPosition(trackIndex, animate = true) {
     if (!animate) {
@@ -70,11 +82,11 @@ class Slider2ColText {
       this.track.classList.remove('no-transition');
     }
 
-    const offset = -trackIndex * 100;
-    this.track.style.transform = `translateX(${offset}%)`;
+    const slideWidth = this.viewport.offsetWidth;
+    const offset = -trackIndex * slideWidth;
+    this.track.style.transform = `translateX(${offset}px)`;
 
     if (!animate) {
-      // 強制リフロー後にクラスを戻す
       void this.track.offsetHeight;
     }
   }
@@ -171,6 +183,12 @@ class Slider2ColText {
     }
 
     this.bindSwipe();
+
+    // リサイズ時にアイテム幅とスライド位置を再計算
+    window.addEventListener('resize', () => {
+      this.updateItemWidths();
+      this.setPosition(this.current + 1, false);
+    });
   }
 
   /* ── タッチスワイプ ── */

@@ -22,3 +22,8 @@ document.querySelectorAll('.slider-tsukuba').forEach(el => {
 document.querySelectorAll('.slider-toyota').forEach(el => {
   new Slider2ColImage(el);
 });
+
+/* ── No.05 ランキング カルーセル ── */
+document.querySelectorAll('.slider-ranking').forEach(el => {
+  new SliderCarousel(el);
+});

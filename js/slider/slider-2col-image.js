@@ -36,6 +36,10 @@ class Slider2ColImage {
 
     this.buildDots();
     this.buildClones();
+    this.allItems = Array.from(this.track.querySelectorAll('.slider-toyota__item'));
+
+    // アイテム幅を明示的に設定
+    this.updateItemWidths();
 
     this.current = 0;
     this.setPosition(1, false);
@@ -77,6 +81,14 @@ class Slider2ColImage {
     this.dots = Array.from(this.dotsWrap.querySelectorAll('.slider-toyota__dot'));
   }
 
+  /* ── アイテム幅をビューポート幅に合わせて設定 ── */
+  updateItemWidths() {
+    const w = this.viewport.offsetWidth;
+    this.allItems.forEach(item => {
+      item.style.width = w + 'px';
+    });
+  }
+
   /* ── 位置セット ── */
   setPosition(trackIndex, animate = true) {
     if (!animate) {
@@ -85,8 +97,9 @@ class Slider2ColImage {
       this.track.classList.remove('no-transition');
     }
 
-    const offset = -trackIndex * 100;
-    this.track.style.transform = `translateX(${offset}%)`;
+    const slideWidth = this.viewport.offsetWidth;
+    const offset = -trackIndex * slideWidth;
+    this.track.style.transform = `translateX(${offset}px)`;
 
     if (!animate) {
       void this.track.offsetHeight;
@@ -192,6 +205,12 @@ class Slider2ColImage {
     }
 
     this.bindSwipe();
+
+    // リサイズ時にアイテム幅とスライド位置を再計算
+    window.addEventListener('resize', () => {
+      this.updateItemWidths();
+      this.setPosition(this.current + 1, false);
+    });
   }
 
   /* ── タッチスワイプ ── */
