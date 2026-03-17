@@ -214,6 +214,10 @@
     text-align: left;
   }
 
+  .slider-ranking__subtitle {
+    margin-bottom: 0;
+  }
+
   .slider-ranking__nav {
     margin-left: auto;
   }
@@ -256,6 +260,26 @@
 
   .slider-ranking__card {
     width: calc(50vw - 32px);
+  }
+}
+
+/* ── 小型SP ── */
+@media (max-width: 600px) {
+  .slider-ranking__header {
+    display: block;
+  }
+
+  .slider-ranking__title {
+    font-size: 2.5rem;
+  }
+
+  .slider-ranking__subtitle {
+    margin-bottom: 16px;
+  }
+
+  .slider-ranking__nav {
+    margin-left: 0;
+    justify-content: flex-start;
   }
 }
 
