@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/slider/slider-2col-text.css">
   <link rel="stylesheet" href="css/slider/slider-2col-image.css">
   <link rel="stylesheet" href="css/slider/slider-carousel.css">
+  <link rel="stylesheet" href="css/slider/slider-peek-center.css">
 </head>
 <body>
 
@@ -31,6 +32,7 @@
         <a href="#slider-03">03 2カラム</a>
         <a href="#slider-04">04 2カラム画像</a>
         <a href="#slider-05">05 カルーセル</a>
+        <a href="#slider-06">06 Peek型</a>
       </nav>
     </div>
   </header>
@@ -988,6 +990,164 @@
 
     </section><!-- /#slider-05 -->
 
+    <!-- ══ No.06 恵比寿ガーデンプレイス風 センターPeek型 ══ -->
+    <section class="demo-section" id="slider-06">
+      <div
+        class="slider-ebisu"
+        role="region"
+        aria-label="メインビジュアル センターPeekスライダー"
+        tabindex="0"
+      >
+        <!-- スクリーンリーダー用ライブリージョン -->
+        <div
+          class="slider-ebisu__live visually-hidden"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <!-- ── スライドステージ ── -->
+        <div class="slider-ebisu__viewport">
+          <div class="slider-ebisu__clip">
+            <div class="slider-ebisu__track">
+
+              <!-- Slide 1 -->
+              <div class="slider-ebisu__item is-active" id="se-slide-0" data-bg="#c5d4df">
+                <div class="slider-ebisu__image-wrap">
+                  <div class="slider-ebisu__placeholder" style="background:linear-gradient(135deg,#8ba4b8 0%,#5a7a94 100%)" aria-hidden="true"></div>
+                </div>
+                <div class="slider-ebisu__overlay">
+                  <div class="slider-ebisu__overlay-inner">
+                    <p class="slider-ebisu__overlay-logo">01</p>
+                    <p class="slider-ebisu__overlay-title">Campaign Title</p>
+                    <p class="slider-ebisu__overlay-sub">Season 2025 — Special Event</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="slider-ebisu__item" id="se-slide-1" data-bg="#d9cec6">
+                <div class="slider-ebisu__image-wrap">
+                  <div class="slider-ebisu__placeholder" style="background:linear-gradient(135deg,#a89080 0%,#7a6050 100%)" aria-hidden="true"></div>
+                </div>
+                <div class="slider-ebisu__overlay">
+                  <div class="slider-ebisu__overlay-inner">
+                    <p class="slider-ebisu__overlay-logo">02</p>
+                    <p class="slider-ebisu__overlay-title">New Collection</p>
+                    <p class="slider-ebisu__overlay-sub">Spring / Summer 2025</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="slider-ebisu__item" id="se-slide-2" data-bg="#c8d8c8">
+                <div class="slider-ebisu__image-wrap">
+                  <div class="slider-ebisu__placeholder" style="background:linear-gradient(135deg,#90a890 0%,#607860 100%)" aria-hidden="true"></div>
+                </div>
+                <div class="slider-ebisu__overlay">
+                  <div class="slider-ebisu__overlay-inner">
+                    <p class="slider-ebisu__overlay-logo">03</p>
+                    <p class="slider-ebisu__overlay-title">Featured Story</p>
+                    <p class="slider-ebisu__overlay-sub">Interview — March 2025</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="slider-ebisu__item" id="se-slide-3" data-bg="#dbd3e3">
+                <div class="slider-ebisu__image-wrap">
+                  <div class="slider-ebisu__placeholder" style="background:linear-gradient(135deg,#b0a0c0 0%,#806898 100%)" aria-hidden="true"></div>
+                </div>
+                <div class="slider-ebisu__overlay">
+                  <div class="slider-ebisu__overlay-inner">
+                    <p class="slider-ebisu__overlay-logo">04</p>
+                    <p class="slider-ebisu__overlay-title">Limited Edition</p>
+                    <p class="slider-ebisu__overlay-sub">Available — April 2025</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="slider-ebisu__item" id="se-slide-4" data-bg="#e3d9c8">
+                <div class="slider-ebisu__image-wrap">
+                  <div class="slider-ebisu__placeholder" style="background:linear-gradient(135deg,#c0a888 0%,#988060 100%)" aria-hidden="true"></div>
+                </div>
+                <div class="slider-ebisu__overlay">
+                  <div class="slider-ebisu__overlay-inner">
+                    <p class="slider-ebisu__overlay-logo">05</p>
+                    <p class="slider-ebisu__overlay-title">Grand Opening</p>
+                    <p class="slider-ebisu__overlay-sub">Coming Soon — Summer 2025</p>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /.slider-ebisu__track -->
+          </div><!-- /.slider-ebisu__clip -->
+
+          <!-- 矢印ボタン -->
+          <button class="slider-ebisu__btn slider-ebisu__btn--prev" aria-label="前のスライドへ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15,4 7,12 15,20"/>
+            </svg>
+          </button>
+          <button class="slider-ebisu__btn slider-ebisu__btn--next" aria-label="次のスライドへ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9,4 17,12 9,20"/>
+            </svg>
+          </button>
+        </div><!-- /.slider-ebisu__viewport -->
+
+        <!-- ドットインジケーター -->
+        <div
+          class="slider-ebisu__dots"
+          role="tablist"
+          aria-label="スライド選択"
+        ></div>
+
+      </div><!-- /.slider-ebisu -->
+
+      <!-- ── 詳細情報 ── -->
+      <div class="demo-info">
+        <div class="demo-info__desc">
+          <div class="demo-info__heading">
+            <p class="demo-info__number">No.06</p>
+            <p class="demo-info__title">センターPeek型スライダー</p>
+            <p class="demo-info__subtitle">Center Peek Slider</p>
+          </div>
+          <p class="demo-info__text">中央にメイン画像を配置し、左右に前後スライドが覗くpeek型レイアウト。白い半透明オーバーレイでテキストを重ね、洗練されたビジュアル訴求を実現するUIです。無限ループ対応。</p>
+        </div>
+        <div class="demo-info__specs">
+          <dl class="demo-info__spec-list">
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Animation</dt>
+              <dd class="demo-info__spec-val">translateX + opacity</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Transition</dt>
+              <dd class="demo-info__spec-val">0.6s ease</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Autoplay</dt>
+              <dd class="demo-info__spec-val">4,000ms</dd>
+            </div>
+            <div class="demo-info__spec-row">
+              <dt class="demo-info__spec-key">Slides</dt>
+              <dd class="demo-info__spec-val">5</dd>
+            </div>
+          </dl>
+          <ul class="demo-info__tags" aria-label="実装機能">
+            <li class="demo-info__tag">Autoplay</li>
+            <li class="demo-info__tag">Keyboard</li>
+            <li class="demo-info__tag">Touch</li>
+            <li class="demo-info__tag">A11y</li>
+            <li class="demo-info__tag">Dots Nav</li>
+            <li class="demo-info__tag">Peek</li>
+            <li class="demo-info__tag">Infinite Loop</li>
+          </ul>
+        </div>
+      </div><!-- /.demo-info -->
+
+    </section><!-- /#slider-06 -->
+
   </main>
 
   <!-- ── Site Footer ── -->
@@ -1001,6 +1161,7 @@
   <script src="js/slider/slider-2col-text.js"></script>
   <script src="js/slider/slider-2col-image.js"></script>
   <script src="js/slider/slider-carousel.js"></script>
+  <script src="js/slider/slider-peek-center.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

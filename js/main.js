@@ -27,3 +27,8 @@ document.querySelectorAll('.slider-toyota').forEach(el => {
 document.querySelectorAll('.slider-ranking').forEach(el => {
   new SliderCarousel(el);
 });
+
+/* ── No.06 センターPeek型 ── */
+document.querySelectorAll('.slider-ebisu').forEach(el => {
+  new SliderPeekCenter(el);
+});

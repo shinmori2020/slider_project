@@ -1,0 +1,283 @@
+/* ============================================================
+   slider-peek-center.css — No.06 恵比寿ガーデンプレイス風 センターPeek型
+   ============================================================ */
+
+.slider-ebisu {
+  --se-bg:        #f0f0f0;
+  --se-text:      #333333;
+  --se-muted:     #999999;
+  --se-overlay-bg: rgba(255, 255, 255, 0.92);
+  --se-dot:       #cccccc;
+  --se-dot-active:#555555;
+  --se-ease:      cubic-bezier(0.4, 0, 0.2, 1);
+  --se-duration:  0.6s;
+  background: var(--se-bg);
+  padding: 56px 0 48px;
+  overflow: hidden;
+  transition: background-color 0.8s ease;
+}
+
+/* ── ビューポート ── */
+.slider-ebisu__viewport {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* ── クリップ ── */
+.slider-ebisu__clip {
+  overflow: hidden;
+  border: 6px solid #ffffff;
+  border-radius: 4px;
+}
+
+/* ── トラック ── */
+.slider-ebisu__track {
+  display: flex;
+  transition: transform var(--se-duration) var(--se-ease);
+  will-change: transform;
+}
+
+/* ── スライドアイテム ── */
+.slider-ebisu__item {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ── 画像ラッパー ── */
+.slider-ebisu__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #d0d0d0;
+}
+
+.slider-ebisu__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── プレースホルダー ── */
+.slider-ebisu__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-ebisu__placeholder::before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 72px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 76' fill='none'><rect x='2' y='2' width='76' height='56' rx='2' stroke='rgba(255,255,255,0.5)' stroke-width='1.8'/><circle cx='16' cy='16' r='7' stroke='rgba(255,255,255,0.5)' stroke-width='1.8'/><polyline points='4,57 20,36 38,50 58,36 76,57' stroke='rgba(255,255,255,0.5)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/><text x='40' y='72' text-anchor='middle' font-size='9' font-family='sans-serif' fill='rgba(255,255,255,0.5)' letter-spacing='2'>NO IMAGE</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* ── オーバーレイ（白枠ボックス） ── */
+.slider-ebisu__overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.slider-ebisu__overlay-inner {
+  background: var(--se-overlay-bg);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 32px 48px;
+  text-align: center;
+  min-width: 280px;
+}
+
+.slider-ebisu__overlay-logo {
+  font-family: var(--font-display, serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--se-text);
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.slider-ebisu__overlay-title {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--se-text);
+  margin-bottom: 4px;
+}
+
+.slider-ebisu__overlay-sub {
+  font-size: 0.6875rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--se-muted);
+}
+
+/* ── 矢印ボタン ── */
+.slider-ebisu__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  color: #555;
+}
+
+.slider-ebisu__btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: #222;
+}
+
+.slider-ebisu__btn:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.slider-ebisu__btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.slider-ebisu__btn--prev {
+  left: 0;
+}
+
+.slider-ebisu__btn--next {
+  right: 0;
+}
+
+/* ── ドットインジケーター ── */
+.slider-ebisu__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.slider-ebisu__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--se-dot);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.slider-ebisu__dot.is-active {
+  background: var(--se-dot-active);
+  border-color: var(--se-dot-active);
+}
+
+.slider-ebisu__dot:hover {
+  border-color: var(--se-dot-active);
+}
+
+.slider-ebisu__dot:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 1024px) {
+  .slider-ebisu__overlay-inner {
+    padding: 24px 36px;
+    min-width: 240px;
+  }
+
+  .slider-ebisu__overlay-logo {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-ebisu {
+    padding: 36px 0 32px;
+  }
+
+  .slider-ebisu__viewport {
+    padding: 0 16px;
+  }
+
+  .slider-ebisu__image-wrap {
+    aspect-ratio: 1 / 1;
+  }
+
+  .slider-ebisu__overlay-inner {
+    padding: 16px 20px;
+    min-width: 160px;
+  }
+
+  .slider-ebisu__overlay-logo {
+    font-size: 1.2rem;
+  }
+
+  .slider-ebisu__overlay-title {
+    font-size: 0.6875rem;
+  }
+
+  .slider-ebisu__overlay-sub {
+    font-size: 0.5625rem;
+  }
+
+  .slider-ebisu__btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slider-ebisu__btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .slider-ebisu__btn--prev {
+    left: 8px;
+  }
+
+  .slider-ebisu__btn--next {
+    right: 8px;
+  }
+
+  .slider-ebisu__dots {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .slider-ebisu__dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slider-ebisu__track {
+    transition-duration: 0.01ms !important;
+  }
+}
