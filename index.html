@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/slider/slider-2col-image.css">
   <link rel="stylesheet" href="css/slider/slider-carousel.css">
   <link rel="stylesheet" href="css/slider/slider-peek-center.css">
+  <link rel="stylesheet" href="css/slider/slider-fullscreen.css">
 </head>
 <body>
 
@@ -34,6 +35,7 @@
         <a href="#slider-04">04 2カラム画像</a>
         <a href="#slider-05">05 カルーセル</a>
         <a href="#slider-06">06 Peek型</a>
+        <a href="#slider-07">07 フルスクリーン</a>
       </nav>
     </div>
   </header>
@@ -1149,6 +1151,140 @@
 
     </section><!-- /#slider-06 -->
 
+    <!-- ══ No.07 縦スクロール型フルスクリーンスライダー ══ -->
+    <section class="demo-section" id="slider-07">
+      <div
+        class="slider-fullscreen"
+        role="region"
+        aria-label="フルスクリーンスライダー"
+        tabindex="0"
+      >
+        <!-- スクリーンリーダー用ライブリージョン -->
+        <div
+          class="slider-fullscreen__live visually-hidden"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <!-- ── スライドトラック ── -->
+        <div class="slider-fullscreen__track">
+
+          <!-- Slide 1 -->
+          <div class="slider-fullscreen__item is-active">
+            <div class="slider-fullscreen__placeholder" style="background:linear-gradient(135deg,#2c3e50 0%,#1a252f 100%)" aria-hidden="true"></div>
+            <div class="slider-fullscreen__content">
+              <span class="slider-fullscreen__label">Featured 01</span>
+              <h2 class="slider-fullscreen__title">Design Philosophy</h2>
+              <p class="slider-fullscreen__desc">シンプルさの中に宿る美しさ。余白と構造が生み出すミニマルデザインの本質を探る。</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slider-fullscreen__item">
+            <div class="slider-fullscreen__placeholder" style="background:linear-gradient(135deg,#4a3728 0%,#2c1f15 100%)" aria-hidden="true"></div>
+            <div class="slider-fullscreen__content">
+              <span class="slider-fullscreen__label">Featured 02</span>
+              <h2 class="slider-fullscreen__title">Craftsmanship</h2>
+              <p class="slider-fullscreen__desc">素材の選定から仕上げまで。職人の手仕事が紡ぐ、時を超える上質なプロダクト。</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slider-fullscreen__item">
+            <div class="slider-fullscreen__placeholder" style="background:linear-gradient(135deg,#1a3a2a 0%,#0f2218 100%)" aria-hidden="true"></div>
+            <div class="slider-fullscreen__content">
+              <span class="slider-fullscreen__label">Featured 03</span>
+              <h2 class="slider-fullscreen__title">Sustainability</h2>
+              <p class="slider-fullscreen__desc">自然と共生するものづくり。持続可能な未来のために、いま選ぶべきスタイル。</p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slider-fullscreen__item">
+            <div class="slider-fullscreen__placeholder" style="background:linear-gradient(135deg,#3b2845 0%,#231530 100%)" aria-hidden="true"></div>
+            <div class="slider-fullscreen__content">
+              <span class="slider-fullscreen__label">Featured 04</span>
+              <h2 class="slider-fullscreen__title">Innovation</h2>
+              <p class="slider-fullscreen__desc">テクノロジーとクリエイティビティの融合。次世代の体験を切り拓くイノベーション。</p>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slider-fullscreen__item">
+            <div class="slider-fullscreen__placeholder" style="background:linear-gradient(135deg,#3a3025 0%,#221c15 100%)" aria-hidden="true"></div>
+            <div class="slider-fullscreen__content">
+              <span class="slider-fullscreen__label">Featured 05</span>
+              <h2 class="slider-fullscreen__title">Experience</h2>
+              <p class="slider-fullscreen__desc">五感を揺さぶる空間体験。訪れるたびに新しい発見がある、記憶に残る場所。</p>
+            </div>
+          </div>
+
+        </div><!-- /.slider-fullscreen__track -->
+
+        <!-- 縦ドットナビ（右端） -->
+        <div
+          class="slider-fullscreen__dots"
+          role="tablist"
+          aria-label="スライド選択"
+        ></div>
+
+        <!-- スライド番号カウンター -->
+        <div class="slider-fullscreen__counter" aria-hidden="true">
+          <span class="slider-fullscreen__counter-current">01</span>
+          <span> / 05</span>
+        </div>
+
+        <!-- スクロールヒント -->
+        <div class="slider-fullscreen__scroll-hint" aria-hidden="true">
+          <div class="slider-fullscreen__scroll-icon"></div>
+          <span>Scroll</span>
+        </div>
+
+      </div><!-- /.slider-fullscreen -->
+
+    </section><!-- /#slider-07 -->
+
+    <!-- ── No.07 詳細情報（stickyセクションの外に配置） ── -->
+    <div class="demo-info">
+      <div class="demo-info__desc">
+        <div class="demo-info__heading">
+          <p class="demo-info__number">No.07</p>
+          <p class="demo-info__title">フルスクリーン 縦スクロールスライダー</p>
+          <p class="demo-info__subtitle">Fullscreen Vertical Slider</p>
+        </div>
+        <p class="demo-info__text">ビューポート全体を覆うフルスクリーン型スライダー。Ken Burns効果による背景アニメーション、スクロール連動でのスライド切替、右端の縦ドットナビを備えた、インパクトのあるヒーローセクション向けUIです。</p>
+      </div>
+      <div class="demo-info__specs">
+        <dl class="demo-info__spec-list">
+          <div class="demo-info__spec-row">
+            <dt class="demo-info__spec-key">Animation</dt>
+            <dd class="demo-info__spec-val">opacity fade + Ken Burns</dd>
+          </div>
+          <div class="demo-info__spec-row">
+            <dt class="demo-info__spec-key">Transition</dt>
+            <dd class="demo-info__spec-val">0.9s ease</dd>
+          </div>
+          <div class="demo-info__spec-row">
+            <dt class="demo-info__spec-key">Autoplay</dt>
+            <dd class="demo-info__spec-val">scroll driven</dd>
+          </div>
+          <div class="demo-info__spec-row">
+            <dt class="demo-info__spec-key">Slides</dt>
+            <dd class="demo-info__spec-val">5</dd>
+          </div>
+        </dl>
+        <ul class="demo-info__tags" aria-label="実装機能">
+          <li class="demo-info__tag">Scroll Driven</li>
+          <li class="demo-info__tag">Keyboard</li>
+          <li class="demo-info__tag">Touch</li>
+          <li class="demo-info__tag">A11y</li>
+          <li class="demo-info__tag">Ken Burns</li>
+          <li class="demo-info__tag">Fullscreen</li>
+          <li class="demo-info__tag">Sticky</li>
+        </ul>
+      </div>
+    </div><!-- /.demo-info -->
+
   </main>
 
   <!-- ── Site Footer ── -->
@@ -1163,6 +1299,7 @@
   <script src="js/slider/slider-2col-image.js"></script>
   <script src="js/slider/slider-carousel.js"></script>
   <script src="js/slider/slider-peek-center.js"></script>
+  <script src="js/slider/slider-fullscreen.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

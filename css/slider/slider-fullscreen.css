@@ -1,0 +1,303 @@
+/* ============================================================
+   slider-fullscreen.css — No.07 縦スクロール型フルスクリーンスライダー
+   Ken Burns効果 + 縦ドットナビ + スクロール連動（sticky方式）
+   ============================================================ */
+
+.slider-fullscreen {
+  --sfs-text:       #ffffff;
+  --sfs-muted:      rgba(255, 255, 255, 0.6);
+  --sfs-dot:        rgba(255, 255, 255, 0.35);
+  --sfs-dot-active: #ffffff;
+  --sfs-ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --sfs-duration:   0.9s;
+
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+/* ── トラック（縦方向） ── */
+.slider-fullscreen__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── スライドアイテム ── */
+.slider-fullscreen__item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--sfs-duration) var(--sfs-ease);
+  overflow: hidden;
+}
+
+.slider-fullscreen__item.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ── Ken Burns 背景画像 ── */
+.slider-fullscreen__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: none;
+}
+
+/* アクティブ時にゆっくりズーム */
+.slider-fullscreen__item.is-active .slider-fullscreen__bg {
+  animation: kenBurns 8s ease forwards;
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.08) translate(-1%, -1%); }
+}
+
+/* ── プレースホルダー ── */
+.slider-fullscreen__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-fullscreen__placeholder::before {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 90px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 76' fill='none'><rect x='2' y='2' width='76' height='56' rx='2' stroke='rgba(255,255,255,0.25)' stroke-width='1.8'/><circle cx='16' cy='16' r='7' stroke='rgba(255,255,255,0.25)' stroke-width='1.8'/><polyline points='4,57 20,36 38,50 58,36 76,57' stroke='rgba(255,255,255,0.25)' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/><text x='40' y='72' text-anchor='middle' font-size='9' font-family='sans-serif' fill='rgba(255,255,255,0.25)' letter-spacing='2'>NO IMAGE</text></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* ── ダークオーバーレイ（テキスト可読性） ── */
+.slider-fullscreen__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  z-index: 1;
+}
+
+/* ── テキストコンテンツ ── */
+.slider-fullscreen__content {
+  position: absolute;
+  bottom: 120px;
+  left: 64px;
+  z-index: 2;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slider-fullscreen__label {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sfs-muted);
+}
+
+.slider-fullscreen__title {
+  font-family: var(--font-display, serif);
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--sfs-text);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.slider-fullscreen__desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--sfs-muted);
+}
+
+/* ── 縦ドットナビ（右端） ── */
+.slider-fullscreen__dots {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.slider-fullscreen__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sfs-dot);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.slider-fullscreen__dot.is-active {
+  background: var(--sfs-dot-active);
+  border-color: var(--sfs-dot-active);
+  transform: scale(1.25);
+}
+
+.slider-fullscreen__dot:hover {
+  border-color: var(--sfs-dot-active);
+}
+
+.slider-fullscreen__dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ── スクロールヒント（下部中央） ── */
+.slider-fullscreen__scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--sfs-muted);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.slider-fullscreen__scroll-icon {
+  width: 20px;
+  height: 28px;
+  border: 1.5px solid var(--sfs-muted);
+  border-radius: 10px;
+  position: relative;
+}
+
+.slider-fullscreen__scroll-icon::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 6px;
+  background: var(--sfs-muted);
+  border-radius: 1px;
+  animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { top: 6px; opacity: 1; }
+  50%      { top: 14px; opacity: 0.3; }
+}
+
+/* ── スライド番号カウンター ── */
+.slider-fullscreen__counter {
+  position: absolute;
+  bottom: 120px;
+  right: 64px;
+  z-index: 10;
+  font-family: var(--font-display, serif);
+  font-size: 0.875rem;
+  color: var(--sfs-muted);
+  letter-spacing: 0.1em;
+}
+
+.slider-fullscreen__counter-current {
+  font-size: 1.5rem;
+  color: var(--sfs-text);
+  font-weight: 700;
+}
+
+/* ── レスポンシブ ── */
+@media (max-width: 1024px) {
+  .slider-fullscreen__content {
+    bottom: 100px;
+    left: 40px;
+    max-width: 480px;
+  }
+
+  .slider-fullscreen__title {
+    font-size: 2.5rem;
+  }
+
+  .slider-fullscreen__counter {
+    bottom: 100px;
+    right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-fullscreen__content {
+    bottom: 80px;
+    left: 24px;
+    right: 60px;
+    max-width: none;
+    gap: 8px;
+  }
+
+  .slider-fullscreen__title {
+    font-size: 1.75rem;
+  }
+
+  .slider-fullscreen__desc {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .slider-fullscreen__dots {
+    right: 16px;
+    gap: 10px;
+  }
+
+  .slider-fullscreen__dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slider-fullscreen__counter {
+    display: none;
+  }
+
+  .slider-fullscreen__scroll-hint {
+    bottom: 20px;
+  }
+}
+
+/* ── prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slider-fullscreen__item {
+    transition-duration: 0.01ms !important;
+  }
+
+  .slider-fullscreen__item.is-active .slider-fullscreen__bg {
+    animation: none;
+  }
+
+  .slider-fullscreen__scroll-icon::before {
+    animation: none;
+  }
+}

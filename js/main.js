@@ -32,3 +32,8 @@ document.querySelectorAll('.slider-ranking').forEach(el => {
 document.querySelectorAll('.slider-ebisu').forEach(el => {
   new SliderPeekCenter(el);
 });
+
+/* ── No.07 フルスクリーン 縦スクロール ── */
+document.querySelectorAll('.slider-fullscreen').forEach(el => {
+  new SliderFullscreen(el);
+});
