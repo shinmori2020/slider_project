@@ -4,11 +4,12 @@
 
 .slider-ronherman {
   --sfm-bg:         #f5f5f0;
-  --sfm-dot:        rgba(0, 0, 0, 0.22);
-  --sfm-dot-active: rgba(0, 0, 0, 0.62);
+  --sfm-dot:        rgba(255, 255, 255, 0.4);
+  --sfm-dot-active: rgba(255, 255, 255, 0.9);
   --sfm-ease:       cubic-bezier(0.4, 0, 0.2, 1);
   --sfm-duration:   0.75s;
 
+  position: relative;
   background: var(--sfm-bg);
   padding: 0;
 }
@@ -109,11 +110,13 @@
 
 /* ── Dots ── */
 .slider-ronherman__dots {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  z-index: 3;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 6px;
-  padding: 14px 24px 0;
 }
 
 .slider-ronherman__dot {
@@ -165,7 +168,8 @@
   }
 
   .slider-ronherman__dots {
-    padding: 10px 16px 0;
+    bottom: 12px;
+    right: 16px;
     gap: 5px;
   }
 
